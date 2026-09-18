@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cuforge
+  labels:
+    app: cuforge
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cuforge
+  template:
+    metadata:
+      labels:
+        app: cuforge
+    spec:
+      containers:
+        - name: cuforge
+          image: cuforge:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "512Mi"
+            limits:
+              cpu: "2"
+              memory: "2Gi"

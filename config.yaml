@@ -1,0 +1,18 @@
+# cuforge 配置（默认：零依赖可运行）
+env:
+  backend: virtual
+  max_steps: 30
+  seed: 42
+agent:
+  llm_backend: scripted
+  model: qwen3.5-9b
+  vision_context_mode: recent
+rl:
+  algorithm: grpo
+  group_size: 8
+  max_episodes: 64
+llm:
+  provider: mock
+  model: qwen3.5-9b
+output_dir: ./runs
+log_level: INFO

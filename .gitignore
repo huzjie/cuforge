@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+runs/
+data/*
+!data/README.md
+.pytest_cache/
+dist/
+build/
+.env

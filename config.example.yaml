@@ -1,0 +1,39 @@
+# cuforge 配置示例（复制为 config.yaml 后按需修改）
+env:
+  backend: virtual            # virtual | docker | playwright
+  max_steps: 30
+  screen_width: 1280
+  screen_height: 720
+  seed: 42
+
+agent:
+  llm_backend: scripted       # scripted | openai_compat | vllm
+  model: qwen3.5-9b
+  temperature: 0.7
+  max_tokens: 1024
+  history_window: 8
+  vision_context_mode: recent # recent | summary | full
+  planner: react
+  reflect: true
+
+rl:
+  algorithm: grpo             # grpo
+  group_size: 8
+  max_episodes: 64
+  learning_rate: 0.0001
+  kl_coef: 0.01
+  reward_sources: [result, process, format]
+  frontier_sampling: true
+  frontier_topk: 2
+
+llm:
+  provider: mock              # mock | openai_compat | vllm
+  base_url: ""
+  api_key: ""
+  model: qwen3.5-9b
+  timeout: 60.0
+
+task_bank: builtin
+output_dir: ./runs
+seed: 42
+log_level: INFO

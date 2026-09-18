@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  cuforge:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./runs:/app/runs
+    environment:
+      - CUFORGE_CONFIG=config.yaml
